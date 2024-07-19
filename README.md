@@ -19,7 +19,7 @@ Se asume que se tiene un proyecto de django funcional. Se puede comprobar el fun
 1. Instalar la librería gunicorn (pip install gunicorn)
 2. Agregar la variable **ALLOWED_HOSTS**  con algunas direcciones en el archivo **settings.py** del proyecto de django; que permitan acceder desde gunicorn y luego desde el servidor web.
 ```
-ALLOWED_HOSTS = ["0.0.0.0", "127.0.0.1"] 	 
+ALLOWED_HOSTS = ["0.0.0.0", "127.0.0.1", "localhost"] 	 
 ```
 2.1 Agregar en el **settings.py** la variable:
 ```
@@ -155,6 +155,13 @@ sudo ln -s /etc/nginx/sites-available/proyecto01 /etc/nginx/sites-enabled
 * http://localhost:81
 * http://0.0.0.0:81
 * http://127.0.0.0:81
+
+6) En caso de que no se ejecute se deberá ir a etc/nginx y editar el archivo de nginx.conf y editar la primera linea:
+
+```
+user root;
+```
+
 
 ![](https://github.com/taw-desarrollo-plataformas-web/django-produccion-01/raw/main/imgs/proyecto-0.png) 
 
